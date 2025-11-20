@@ -8,11 +8,28 @@ const API_KEY = "9170e0e85794088df319259526c55afd";
 const API_BASE_URL = "https://api.openweathermap.org/data/2.5/forecast";
 const UNITS = "metric";
 const INITIAL_CITY = "Rio de Janeiro";
+
+const formatUpdateTime = (timestamp) => {
+  const date = new Date(timestamp * 1000);
+  const formattedTime = date
+    .toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: false,
+    })
+    .replace(",", "");
+
+  return formattedTime;
+};
+
 export const WeatherPage = () => {
   const [city, setCity] = useState(INITIAL_CITY);
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [lastUpdatedTime, setLastUpdatedTime] = useState("");
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -22,6 +39,9 @@ export const WeatherPage = () => {
         const URL = `${API_BASE_URL}?q=${city}&appid=${API_KEY}&units=${UNITS}`;
         const response = await axios.get(URL);
         setWeather(response.data);
+        const updateTimestampSeconds = response.data.list[0].dt;
+        const timeString = formatUpdateTime(updateTimestampSeconds);
+        setLastUpdatedTime(timeString);
       } catch (err) {
         console.error("Error fetching weather data:", err);
         setError("Forecast could not be loaded. Please, try again");
@@ -46,6 +66,9 @@ export const WeatherPage = () => {
           <ForecastDays data={weather} />
         </div>
       )}
+      <div className="last-updated-footer">
+        Last updated on {lastUpdatedTime}
+      </div>
     </>
   );
 };

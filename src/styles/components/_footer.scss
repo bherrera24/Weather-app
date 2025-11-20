@@ -1,0 +1,9 @@
+@use '../abstract/variables';
+
+.last-updated-footer {
+    color: variables.$color-tab-bg; 
+    text-align: right;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    border-radius: 0; 
+}
