@@ -33,17 +33,17 @@ export const WeatherPage = () => {
     fetchWeather();
   }, [city]);
   return (
-    <div>
+    <>
       <CityTabs selectedCity={city} onSelect={setCity} />
       {loading && <div>Loading weather data</div>}
       {error && <div style={{ color: "red", padding: "10px" }}>{error}</div>}
       {weather && (
-        <>
-          <h2>Simple Weather</h2>
+        <div>
+          <h2 className="app-title">Simple Weather</h2>
           <ForecastHours data={weather} />
           <ForecastDays data={weather} />
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };

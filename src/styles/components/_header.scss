@@ -1,0 +1,10 @@
+@use '../abstract/variables';
+
+
+.app-title {
+    color: variables.$color-tab-bg;
+    font-size: 1.8em;
+    padding: 15px 15px 0 15px;
+    margin: 0;
+    font-weight: bold;
+}

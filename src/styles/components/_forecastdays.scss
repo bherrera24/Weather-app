@@ -50,13 +50,12 @@
         min-width: 70px;
         text-align: right;
         .max-temp{
-            font-weight: bold;
             color: variables.$color-text-dark;
             margin-right: 8px;
         }
 
         .min-temp{
-            color: variables.$color-min-temp;
+            color: variables.$color-text-dark;
         }
     }
 
