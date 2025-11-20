@@ -1,0 +1,63 @@
+@use '../abstract/variables';
+
+.forecast-days-container{
+    .day-list{
+        padding-top: 5px;
+    }
+    .day-item-row{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    .day-left-content{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-grow:1
+    }
+    .day-icon{
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .day-icon{
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+    .day-text{
+        .day-label-text{
+            font-weight: bold;
+            color: variables.$color-text-dark;
+            font-size: 0.95em;
+        }
+
+        .day-description{
+            font-size: 0.8em;
+            color: variables.$color-text-medium;
+            text-transform: capitalize;
+        }
+    }
+
+    .day-temps-right{
+        flex-shrink: 0;
+        min-width: 70px;
+        text-align: right;
+        .max-temp{
+            font-weight: bold;
+            color: variables.$color-text-dark;
+            margin-right: 8px;
+        }
+
+        .min-temp{
+            color: variables.$color-min-temp;
+        }
+    }
+
+}
