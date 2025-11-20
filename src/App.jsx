@@ -1,3 +1,5 @@
+import { WeatherPage } from "./pages/WeatherPage";
+
 export default function App() {
-  return <h1>Weather App</h1>;
+  return <WeatherPage />;
 }
