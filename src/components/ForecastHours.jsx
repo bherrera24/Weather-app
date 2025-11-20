@@ -5,29 +5,31 @@ export const ForecastHours = ({ data }) => {
     return <div>Loading...</div>;
   }
   return (
-    <div>
+    <div className="forecast-hours-container">
       <h3>Next hours</h3>
-      {nextHours.map((hour) => {
-        const { dt, dt_txt, main, weather, pop } = hour;
-        const rainPercent = Math.round(pop * 100);
-        const time =
-          new Date(dt_txt).toLocaleTimeString("es-US", {
-            hour: "numeric",
-            minute: "2-digit",
-            hour12: true,
-          }) ?? [];
-        const description = weather[0]?.description || "";
-        const iconCode = weather[0]?.icon;
-        const iconUrl = `${WEATHER_ICON_BASE_URL}${iconCode}.png`;
-        return (
-          <div key={dt}>
-            <div>{Math.round(main.temp)}°</div>
-            <img src={iconUrl} alt={description} />
-            <div>{rainPercent}%</div>
-            <div>{time}</div>
-          </div>
-        );
-      })}
+      <div className="hours-list">
+        {nextHours.map((hour) => {
+          const { dt, dt_txt, main, weather, pop } = hour;
+          const rainPercent = Math.round(pop * 100);
+          const time =
+            new Date(dt_txt).toLocaleTimeString("es-US", {
+              hour: "numeric",
+              minute: "2-digit",
+              hour12: true,
+            }) ?? [];
+          const description = weather[0]?.description || "";
+          const iconCode = weather[0]?.icon;
+          const iconUrl = `${WEATHER_ICON_BASE_URL}${iconCode}.png`;
+          return (
+            <div className="hour-item" key={dt}>
+              <div className="temp-value">{Math.round(main.temp)}°</div>
+              <div className="rain-percent">{rainPercent}%</div>
+              <img src={iconUrl} alt={description} className="hour-icon" />
+              <div className="time-label">{time}</div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

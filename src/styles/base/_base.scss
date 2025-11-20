@@ -1,0 +1,29 @@
+@use '../abstract/variables';
+
+* {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.forecast-hours-container,
+.forecast-days-container{
+    padding:15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: variables.$color-bg-light;
+    box-shadow: 0 2px 5px rgba(0,0,0, 0.1);
+
+
+    h3{
+        margin-top: 0;
+        color: variables.$color-text-dark;
+        font-weight: bold;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+}
