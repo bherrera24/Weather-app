@@ -5,14 +5,17 @@ export const ForecastHours = ({ data }) => {
     return <div>Loading...</div>;
   }
   return (
-    <div className="forecast-hours-container">
+    <div
+      className="forecast-hours-container"
+      data-tooltip="Next hours forecast"
+    >
       <h3>Next hours</h3>
       <div className="hours-list">
         {nextHours.map((hour) => {
           const { dt, dt_txt, main, weather, pop } = hour;
           const rainPercent = Math.round(pop * 100);
           const time =
-            new Date(dt_txt).toLocaleTimeString("es-US", {
+            new Date(dt_txt).toLocaleTimeString("en-US", {
               hour: "numeric",
               minute: "2-digit",
               hour12: true,

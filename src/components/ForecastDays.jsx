@@ -28,8 +28,11 @@ export const ForecastDays = ({ data }) => {
     }) ?? [];
 
   return (
-    <div className="forecast-days-container">
-      <h3>Next five days</h3>
+    <div
+      className="forecast-days-container"
+      data-tooltip="Next 5 days forecast"
+    >
+      <h3>Next 5 days</h3>
       {days.length > 0 ? (
         <div className="days-list">
           {days.map((day) => {

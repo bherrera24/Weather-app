@@ -39,7 +39,7 @@ export const WeatherPage = () => {
       {error && <div style={{ color: "red", padding: "10px" }}>{error}</div>}
       {weather && (
         <>
-          <h2>{weather?.city?.name}</h2>
+          <h2>Simple Weather</h2>
           <ForecastHours data={weather} />
           <ForecastDays data={weather} />
         </>
