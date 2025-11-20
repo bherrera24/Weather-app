@@ -14,36 +14,34 @@
             border-bottom: none;
         }
     }
-    .day-left-content{
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        flex-grow:1
-    }
-    .day-icon{
-        width: 40px;
-        height: 40px;
-        flex-shrink: 0;
-    }
+        .day-left-content{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-grow:1;
+            text-align: left;
+            .day-icon{
+                width: 40px;
+                height: 40px;
+                flex-shrink: 0;
+            }
+            .day-text{
+                text-align: left;
+                .day-label-text{
+                    font-weight: bold;
+                    color: variables.$color-text-dark;
+                    font-size: 0.95em;
+                }
 
-    .day-icon{
-        width: 40px;
-        height: 40px;
-        flex-shrink: 0;
-    }
-    .day-text{
-        .day-label-text{
-            font-weight: bold;
-            color: variables.$color-text-dark;
-            font-size: 0.95em;
-        }
-
-        .day-description{
-            font-size: 0.8em;
-            color: variables.$color-text-medium;
-            text-transform: capitalize;
+                .day-description{
+                    font-size: 0.8em;
+                    color: variables.$color-text-medium;
+                    text-transform: capitalize;
+                }
         }
     }
+    
+   
 
     .day-temps-right{
         flex-shrink: 0;

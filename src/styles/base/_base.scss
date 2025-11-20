@@ -66,3 +66,9 @@ body{
         border-bottom: 1px solid #ddd;
     }
 }
+.loading-message {
+    color: variables.$color-tab-bg; 
+    text-align: left;
+    padding: 20px;
+    font-size: 1.1em;
+}

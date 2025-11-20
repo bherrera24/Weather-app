@@ -58,8 +58,6 @@ export const ForecastDays = ({ data }) => {
               <div key={dt} className="day-item-row">
                 <div className="day-left-content">
                   <img src={iconUrl} alt={description} className="day-icon" />
-                </div>
-                <div>
                   <div className="day-text">
                     <div className="day-label-text">
                       {dayLabel}, {dateLabel}

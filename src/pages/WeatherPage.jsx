@@ -35,7 +35,9 @@ export const WeatherPage = () => {
   return (
     <>
       <CityTabs selectedCity={city} onSelect={setCity} />
-      {loading && <div>Loading weather data</div>}
+      {loading && (
+        <div className="loading-message">Loading weather data...</div>
+      )}
       {error && <div style={{ color: "red", padding: "10px" }}>{error}</div>}
       {weather && (
         <div>
