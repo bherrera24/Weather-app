@@ -1,6 +1,5 @@
 const WEATHER_ICON_BASE_URL = "http://openweathermap.org/img/wn/";
 
-//function to group and calculate daily Min/Max
 const calculateDailyExtremes = (list) => {
   return list?.reduce((prev, current) => {
     const dateKey = current.dt_txt.split(" ")[0];
